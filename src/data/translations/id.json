@@ -1,0 +1,6 @@
+{
+    "welcome": {
+        "title": "de_Welcome to {{key_1}}",
+        "intro": "de_To get started, edit <1><0></0></1> and save to reload."
+    }
+}
