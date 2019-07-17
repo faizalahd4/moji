@@ -1,22 +1,20 @@
-import React,{useState,useEffect,useReducer,useContext} from 'react';
+import React, {useState, useEffect, useReducer, useContext} from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { withTranslation } from 'react-i18next';
 
 //import MessengerCustomerChat from 'react-messenger-customer-chat';
 
-import {Header} from './routes/base/Header';
-import {Footer} from './routes/base/Footer';
+import {Header} from './scripts/view/base/header';
+import {Footer} from './scripts/view/base/footer';
 
-import {HomePage} from './routes/pages/HomePage';
-import {About} from './routes/pages/About';
+import {Home} from './scripts/view/pages/home';
+import {About} from './scripts/view/pages/about';
 
+import appReducer from './scripts/reducers/appReducer';
+import NavContext from "./scripts/models/navContext";
+import UserContext from "./scripts/models/userContext";
+import {Types} from './scripts/constants/types';
 
-import appReducer from './reducers/appReducer';
-import NavContext from "./models/navContext";
-import UserContext from "./models/userContext";
-import {NAV_MENU} from './tools/types';
-
-import logo from './logo.svg';
-import './App.scss';
 
 
 function App() {
@@ -34,7 +32,7 @@ function App() {
 
   const updateCurrentNav = (nav)=>{
 	dispatch({ 
-		type: NAV_MENU,
+		type: Types.NAV_MENU,
 		payload: nav 
 	  });
   }  
@@ -50,7 +48,7 @@ function App() {
 					<Header />
 				</NavContext.Provider>
 
-					<Route path="/" exact component={HomePage} />
+					<Route path="/" exact component={Home} />
 					<Route path="/about" component={About} />
 					
 				<NavContext.Provider value={{
@@ -70,4 +68,4 @@ function App() {
   	);
 }
 
-export default App;
+export default withTranslation()(App);

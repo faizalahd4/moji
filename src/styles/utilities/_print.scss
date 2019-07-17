@@ -1,0 +1,18 @@
+/**
+ * Copyright (c) 2019
+ * Print specific setting
+ * 
+ * @summary Print specific setting
+ * @author  UOB
+ * 
+ * Created at: 2019 July 03
+ */
+
+ @media print {
+    .no-print, .no-print * {
+        display: none !important;
+    }
+    .only-print {
+        display: block !important;
+    }
+ }
