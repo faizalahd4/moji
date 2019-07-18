@@ -15,7 +15,7 @@ import NavContext from "./scripts/models/navContext";
 import UserContext from "./scripts/models/userContext";
 import {Types} from './scripts/constants/types';
 
-
+import './styles/main.scss';
 
 function App() {
   const [userDetails,setUserDetails] = useState();
